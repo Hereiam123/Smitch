@@ -14,16 +14,22 @@ class GoogleAuth extends Component {
     }
   }
 
+  onAuthChange = () => {
+    this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+  };
+
   componentDidMount() {
     window.gapi.load("client:auth2", () => {
       window.gapi.client
         .init({
           clientId,
-          scope: "email"
+          scope: "email" /*,
+          ux_mode: "redirect"*/
         })
         .then(() => {
           this.auth = window.gapi.auth2.getAuthInstance();
           this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+          this.auth.isSignedIn.listen(this.onAuthChange);
         });
     });
   }
