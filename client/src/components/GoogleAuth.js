@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { clientId } from "../clientId";
 
 class GoogleAuth extends Component {
   state = { isSignedIn: null };
@@ -17,7 +18,7 @@ class GoogleAuth extends Component {
     window.gapi.load("client:auth2", () => {
       window.gapi.client
         .init({
-          clientId: "",
+          clientId,
           scope: "email"
         })
         .then(() => {
