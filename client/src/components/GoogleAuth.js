@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { clientId } from "../clientId";
 import { connect } from "react-redux";
-import { signIn, signOut } from "../actions";
+import { signIn, signOut } from "../actions/authActions";
 
 class GoogleAuth extends Component {
   //Get Google Auth2 Library
