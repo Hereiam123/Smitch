@@ -24,3 +24,6 @@ yarn-error.log*
 
 #Oauth Client Id
 clientId.js
+
+#Temp Json DB
+db.json
