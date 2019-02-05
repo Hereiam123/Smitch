@@ -32,8 +32,12 @@ class StreamList extends Component {
         <div className="item" key={stream.id}>
           {this.renderCurrUserOptions(stream)}
           <i className="large middle aligned icon camera" />
-          <div className="content">{stream.title}</div>
-          <div className="description">{stream.description}</div>
+          <div className="content">
+            <Link to={`streams/show/${stream.id}`} className="header">
+              {stream.title}{" "}
+            </Link>
+            <div className="description">{stream.description}</div>
+          </div>
         </div>
       );
     });
