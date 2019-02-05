@@ -23,7 +23,7 @@ class StreamShow extends Component {
     if (this.player || !this.props.stream) {
       return;
     }
-    const { id } = this.props.match.params.id;
+    const { id } = this.props.match.params;
     this.player = flv.createPlayer({
       type: "flv",
       url: `http://localhost:8000/live/${id}.flv`
